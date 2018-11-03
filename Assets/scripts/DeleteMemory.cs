@@ -9,7 +9,14 @@ public class DeleteMemory : MonoBehaviour {
         if (c.transform.parent != null)
             Destroy(c.transform.parent.gameObject);
         else
-        { Destroy(c.gameObject); }
+        {
+            if (c.gameObject.CompareTag("collectible"))
+            {
+                EndlessFloor.sphereSoFar--;
+            }
+                Destroy(c.gameObject);
+           
+        }
     }
 
 }

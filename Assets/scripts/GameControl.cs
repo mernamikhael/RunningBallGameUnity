@@ -4,17 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+    public GameObject mainmenu;
+    public GameObject back;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey("escape"))
-        {
-            SceneManager.LoadScene("Pause");
-        }
+
+
+        if(mainmenu.active==true)
+            back.active=false;
+
     }
 }
